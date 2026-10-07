@@ -1,0 +1,70 @@
+  :root {
+    --bg-top: #5b8def;
+    --bg-bottom: #a7c4f5;
+    --ink: #0f1b2d;
+    --card: rgba(255, 255, 255, 0.22);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(160deg, var(--bg-top), var(--bg-bottom));
+    transition: background 0.8s ease;
+    display: flex;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+  body.sunny  { --bg-top: #f6b73c; --bg-bottom: #fde9b0; }
+  body.cloudy { --bg-top: #7b8794; --bg-bottom: #c9d1d9; }
+  body.rainy  { --bg-top: #3d5a80; --bg-bottom: #8fa9c7; color: #fff; }
+  body.snowy  { --bg-top: #b8d4e8; --bg-bottom: #f1f7fb; }
+  body.stormy { --bg-top: #2b2d42; --bg-bottom: #6c6f8a; color: #fff; }
+  body.night  { --bg-top: #141e3c; --bg-bottom: #3b4a7a; color: #fff; }
+
+  .app { width: 100%; max-width: 460px; }
+
+  .search { display: flex; gap: 8px; margin-bottom: 8px; }
+  input {
+    flex: 1; padding: 12px 14px; border: none; border-radius: 12px;
+    font-size: 1rem; background: rgba(255,255,255,0.85); color: #0f1b2d;
+  }
+  button {
+    padding: 12px 16px; border: none; border-radius: 12px; cursor: pointer;
+    font-size: 1rem; background: #0f1b2d; color: #fff;
+  }
+  button:hover { opacity: 0.85; }
+  :focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+  .tools { display: flex; justify-content: space-between; margin-bottom: 20px; }
+  .link {
+    background: none; color: inherit; padding: 4px 0; font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  #message { min-height: 1.4em; margin-bottom: 12px; font-size: 0.95rem; }
+
+  .now { text-align: center; padding: 12px 0 24px; }
+  .city { font-size: 1.4rem; }
+  .temp { font-size: 5.5rem; font-weight: 700; line-height: 1.1; }
+  .icon { font-size: 3.5rem; }
+  .desc { font-size: 1.1rem; margin-top: 4px; }
+
+  .details {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;
+  }
+  .box {
+    background: var(--card); border-radius: 14px; padding: 12px 8px; text-align: center;
+  }
+  .box small { display: block; opacity: 0.8; margin-bottom: 4px; }
+  .box strong { font-size: 1.1rem; }
+
+  .forecast { display: grid; gap: 8px; }
+  .day {
+    display: grid; grid-template-columns: 1fr auto auto; gap: 14px; align-items: center;
+    background: var(--card); border-radius: 14px; padding: 10px 14px;
+  }
+  .day .lo { opacity: 0.7; }
+
+  .hidden { display: none; }
+  @media (prefers-reduced-motion: reduce) { body { transition: none; } }
